@@ -66,6 +66,9 @@ public:
 
   ///* Sigma point spreading parameter
   double lambda_;
+  
+  ///
+  MatrixXd H_laser_;
 
 
   /**
@@ -102,6 +105,12 @@ public:
    * @param meas_package The measurement at k+1
    */
   void UpdateRadar(MeasurementPackage meas_package);
+  
+  /**
+   * Normalize angle
+   * @param angle The angle to be normalized
+   */
+  double NormalizeAngle(double angle);
 };
 
 #endif /* UKF_H */
